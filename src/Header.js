@@ -4,6 +4,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { useStateValue } from "./StateProvider";
 import { auth } from './firebase';
+import { Link } from 'react-router-dom';
 
 
 function Header() {
@@ -18,12 +19,12 @@ function Header() {
 
   return (
     <div className='header'>
-      <a href="/">
+      <Link to="/">
         <img 
           className='header__logo' 
           src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
         />
-      </a>
+      </Link>
 
       <div className='header__search'>
           <input 
@@ -49,14 +50,14 @@ function Header() {
           <span className='header__optionLineTwo'>Prime</span>
         </div>
         
-        <a href='/checkout'>
+        <Link to='/checkout'>
           <div className="header__optionBasket">
             <ShoppingBasketIcon />
             <span className='header__optionLineTwo header__basketCount'>
                 {basket?.length}
               </span>
           </div>
-        </a>
+        </Link>
 
         </div>
       </div>
